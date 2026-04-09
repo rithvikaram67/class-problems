@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a,b,c,d;
+	    int e,f,g,h;
+	    int m1,m2,m3,m4,m5,m6,m7;
+	    int c11,c12,c21,c22;
+	    a=sc.nextInt();
+	    b=sc.nextInt();
+	    c=sc.nextInt();
+	    d=sc.nextInt();
+	    e=sc.nextInt();
+	    f=sc.nextInt();
+	    g=sc.nextInt();
+	    h=sc.nextInt();
+	    m1=(a+d)*(e+h);
+	    m2=(c+d)*e;
+	    m3=a*(f-h);
+	    m4=d*(g-e);
+	    m5=(a+b)*h;
+	    m6=(c-a)*(e+f);
+	    m7=(b-d)*(g+h);
+	    c11=m1+m4-m5+m7;
+	    c12=m3+m5;
+	    c21=m2+m4;
+	    c22=m1-m2+m3+m6;
+		System.out.println("Result Matrix:");
+		System.out.println(c11+" "+c12);
+		System.out.println(c21+" "+c22);
+	}
+}
