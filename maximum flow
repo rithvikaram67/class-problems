@@ -1,0 +1,17 @@
+public class Main
+{
+    static int V = 3;
+    static int maxFlow(int[][] graph, int s, int t) {
+        int flow = 0;
+        flow = Math.min(graph[0][1], graph[1][2]);
+        return flow;
+    }
+	public static void main(String[] args) {
+	    int[][] graph = {
+	        {0, 10, 0},
+	        {0, 0, 6},
+	        {0, 0, 0}
+	    };
+		System.out.println("Maximum Flow = " + maxFlow(graph, 0, 2));
+	}
+}
