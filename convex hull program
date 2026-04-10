@@ -1,0 +1,57 @@
+import java.util.*;
+public class Main
+{
+    static int orientation(int x1, int y1, int x2, int y2, int x3, int y3)
+    {
+        int val=(y2-y1)*(x3-x2)-(x2-x1)*(y3-y2);
+        if(val==0)
+        return 0;
+        return(val>0)?1:2;
+    }
+    
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    	System.out.println("Enter number of points:");
+	    	int n=sc.nextInt();
+	    	int[] x= new int[n];
+            int[] y= new int[n];
+            System.out.println("Enter points(x,y):");
+	    for(int i=0;i<n;i++)
+	    {
+	        x[i] =sc.nextInt();
+	        y[i] =sc.nextInt();    
+	    
+	    }
+		System.out.println("Convex hull points:");
+		 for(int i=0;i<n;i++)
+		 {
+		     for(int j=i+1;j<n;j++)
+		     {
+		         int side=0;
+		         boolean isHull=true;
+		         for(int k=0;k<n;k++)
+		         {
+		             int o= orientation(x[i],y[i],x[j],y[j],x[k],y[k]);
+		             if(o!=0)
+		             {
+		                 if(side==0)
+		                 {
+		                     side=o;
+		                 }
+		                 else if(side!=o)
+		                 {
+		                     isHull=false;
+		                     break;
+		                 }
+		             }
+		         }
+		         if(isHull)
+		         {
+		             System.out.println("("+x[i]+","+y[i]+")and ("+x[j]+","+y[j]+")");
+		             
+		         }
+		     }
+		 }
+	}
+}
